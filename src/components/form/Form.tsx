@@ -14,7 +14,7 @@ import { IForm } from "./form.d";
 import { useForm } from "react-hook-form";
 
 const Form = (props: IForm) => {
-  const { apiUri, forms, method } = props;
+  const { apiUri, forms, method, column, submitColor, submitLabel } = props;
   const {
     register,
     handleSubmit,
@@ -27,7 +27,7 @@ const Form = (props: IForm) => {
   };
   return (
     <Stack as={"form"} onSubmit={handleSubmit(onSubmit)}>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
+      <SimpleGrid columns={{ base: 1, md: column || 2 }} spacing={4}>
         {forms.map((item, i) => (
           <FormControl key={i}>
             <FormLabel>{item.label}</FormLabel>
@@ -49,8 +49,8 @@ const Form = (props: IForm) => {
         ))}
       </SimpleGrid>
       <ButtonGroup my={2} justifyContent={"flex-end"}>
-        <Button type="submit" colorScheme="whatsapp">
-          Save
+        <Button type="submit" colorScheme={submitColor || "whatsapp"}>
+          {submitLabel || "Save"}
         </Button>
       </ButtonGroup>
     </Stack>

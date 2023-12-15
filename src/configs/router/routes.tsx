@@ -26,7 +26,7 @@ export const routes: IRouter[] = [
     paths: [
       {
         name: "Login",
-        path: "/login",
+        path: "/auth/login",
       },
     ],
   },
