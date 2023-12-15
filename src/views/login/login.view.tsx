@@ -7,7 +7,7 @@ import React from "react";
 const LoginView = () => {
   return (
     <Center h={"100vh"}>
-      <Box w={500}>
+      <Box w={{ base: 350, md: 500 }}>
         <Box bgColor={"white"}>
           <Box
             p={4}
@@ -30,13 +30,13 @@ const LoginView = () => {
                   label: "Email",
                   type: "email",
                   placeHolder: "Input You're Email",
-                  register: { label: "email" },
+                  register: { label: "email", isRequired: true },
                 },
                 {
                   label: "Password",
                   type: "password",
                   placeHolder: "Input You're Password",
-                  register: { label: "password" },
+                  register: { label: "password", isRequired: true },
                 },
               ]}
               method="POST"
