@@ -1,12 +1,33 @@
-import { ISBLink } from "@/components/sidebar/sidebar.d";
+import { LinkIcon } from "@chakra-ui/icons";
+import { IRouter } from "./router.d";
 
-export const routes: ISBLink[] = [
+export const routes: IRouter[] = [
   {
-    name: "Dashboard",
-    path: "/dashboard",
+    routeName: "Dashboard",
+    paths: [
+      {
+        name: "Dashboard",
+        path: "/dashboard",
+        icon: LinkIcon,
+      },
+      {
+        name: "DataTable",
+        path: "/dashboard/datatable",
+      },
+      {
+        name: "Form",
+        path: "/dashboard/form",
+      },
+    ],
   },
+
   {
-    name: "DataTable",
-    path: "/dashboard/datatable",
+    routeName: "Auth",
+    paths: [
+      {
+        name: "Login",
+        path: "/login",
+      },
+    ],
   },
 ];

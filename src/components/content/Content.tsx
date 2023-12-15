@@ -1,3 +1,5 @@
+"use client";
+
 import { Box } from "@chakra-ui/react";
 import React from "react";
 import Navbar from "../navbar/Navbar";
@@ -7,6 +9,9 @@ const Content = ({ children }: { children: React.ReactNode }) => {
   return (
     <ContentWrapper>
       <Navbar />
+      <Box as={"main"} my={2}>
+        {children}
+      </Box>
     </ContentWrapper>
   );
 };

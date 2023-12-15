@@ -3,7 +3,7 @@ import React from "react";
 
 const ContentWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Box p={4} flex={1}>
+    <Box p={4} flex={1} w={"100vw"}>
       {children}
     </Box>
   );
