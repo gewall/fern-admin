@@ -1,5 +1,6 @@
 import React from "react";
 import { Providers } from "../providers/providers";
+import { useSidebarStore } from "@/providers/stores/stores";
 
 export default function RootLayout({
   children,
@@ -14,4 +15,3 @@ export default function RootLayout({
     </html>
   );
 }
-

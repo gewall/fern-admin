@@ -11,7 +11,7 @@ interface IFormControl {
   label: string;
   placeHolder?: string;
   defValue?: string;
-  type: "text" | "number" | "file" | "email" | "password";
+  type: "text" | "number" | "file" | "email" | "password" | "date" | "select";
   options?: IFormOption[];
   register?: IFormRegister;
 }

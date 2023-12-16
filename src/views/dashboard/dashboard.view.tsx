@@ -5,7 +5,7 @@ import { TimeIcon } from "@chakra-ui/icons";
 import { Flex, Stack } from "@chakra-ui/react";
 import React from "react";
 
-const Dashboard = () => {
+const DashboardView = () => {
   return (
     <Content>
       <Stack flexDir={{ base: "column", md: "row" }}>
@@ -16,4 +16,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardView;

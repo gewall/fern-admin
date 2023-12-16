@@ -6,6 +6,7 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Select,
   SimpleGrid,
   Stack,
 } from "@chakra-ui/react";
@@ -31,20 +32,30 @@ const Form = (props: IForm) => {
         {forms.map((item, i) => (
           <FormControl key={i}>
             <FormLabel>{item.label}</FormLabel>
-            <Input
-              placeholder={item.placeHolder}
-              defaultValue={item.defValue}
-              type="text"
-              {...register(item.register?.label || "", {
-                required: item.register?.isRequired,
-              })}
-            />
-            {item.options &&
-              item.options.map((_item, _i) => (
-                <Fragment key={i}>
-                  <option value={_item.value}>{_item.label}</option>
-                </Fragment>
-              ))}
+            {item.type === "select" ? (
+              <Select
+                placeholder={item.placeHolder}
+                {...register(item.register?.label || "", {
+                  required: item.register?.isRequired,
+                })}
+              >
+                {item.options &&
+                  item.options.map((_item, _i) => (
+                    <Fragment key={_i}>
+                      <option value={_item.value}>{_item.label}</option>
+                    </Fragment>
+                  ))}
+              </Select>
+            ) : (
+              <Input
+                placeholder={item.placeHolder}
+                defaultValue={item.defValue}
+                type={item.type}
+                {...register(item.register?.label || "", {
+                  required: item.register?.isRequired,
+                })}
+              />
+            )}
           </FormControl>
         ))}
       </SimpleGrid>

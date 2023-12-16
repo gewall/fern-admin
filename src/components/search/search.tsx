@@ -8,13 +8,21 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const Search = () => {
+interface ISearch {
+  placeholder?: string;
+}
+
+const Search = (props: ISearch) => {
+  const { placeholder } = props;
   return (
-    <InputGroup maxW={{ base: 150, md: 250 }} size={{ base: "sm", md: "md" }}>
+    <InputGroup
+      maxW={{ base: "full", md: 250 }}
+      size={{ base: "sm", md: "md" }}
+    >
       <InputLeftElement pointerEvents="none">
         <SearchIcon color="gray.300" />
       </InputLeftElement>
-      <Input />
+      <Input placeholder={placeholder} />
       <InputRightElement w={16}>
         <Button
           w={16}
